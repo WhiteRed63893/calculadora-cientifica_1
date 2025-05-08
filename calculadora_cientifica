@@ -1,0 +1,43 @@
+import math
+while True:
+    print("=== CALCULADORA FODA ===")
+    print("\n1. Calcular \n2. Sair")
+    opcao = int(input("Escolha uma opção entre 1 ou 2: "))
+    if opcao == 1:
+        print("=== CALCULADORA ===")
+        num1 = float(input("Digite o primeiro número: "))
+        operador = input("Digite o operador (+, -, *, /, **, sqrt, sin, cos, tan): ")
+        if operador in ['+', '-', '*', '/', '**']:
+            num2 = float(input("Digite o segundo número: "))
+        if operador == '+':
+            print(f"Resultado: {num1 + num2}")
+        elif operador == '-':
+            print(f"Resultado: {num1 - num2}")
+        elif operador == '*':
+            print(f"Resultado: {num1 * num2}")
+        elif operador == '/':
+            if num2 != 0:
+                print(f"Resultado: {num1 / num2}")
+            else:
+                print("Divisão por zero não é permitida.")
+        elif operador == '**':
+            print(f"Resultado: {num1 ** num2}")
+        elif operador == 'sqrt':
+            if num1 >= 0:
+                print(f"Resultado: {num1 ** 0.5}")
+            else:
+                print("Raiz quadrada de número negativo não é permitida.")
+        elif operador == 'sin':
+            resultado = math.sin(math.radians(num1))
+            print("Seno de", num1, "graus é:", resultado)
+        elif operador == 'cos':
+            resultado = math.cos(math.radians(num1))
+            print("Cosseno de", num1, "graus é:", resultado)
+        elif operador == 'tan':
+            resultado = math.tan(math.radians(num1))
+            print("Tangente de", num1, "graus é:", resultado)
+    elif opcao == 2:
+        print("Saindo...")
+        break
+    else:
+        print("Operação incorreta.")
